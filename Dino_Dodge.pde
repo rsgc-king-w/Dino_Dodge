@@ -21,5 +21,9 @@ void draw()  {
   
   //create the apperance of moving by changing the x position
   x= x-5;
-  
+ 
+ // put the cactus back on the right edge icf it goes off the left
+ if (x <-25) {
+   x=900; // place off the screen on right
+ }
 }
