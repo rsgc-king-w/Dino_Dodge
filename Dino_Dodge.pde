@@ -21,7 +21,7 @@ void setup() {
   d1= new Dino(0, 170, 0);
 }
 
-  // this function runs repeatedly
+// this function runs repeatedly
 void draw() {
   // background clears each time the program loops
   background(255);
@@ -29,13 +29,7 @@ void draw() {
   c1.update(gravity);
   d1.update(gravity);
 
-  //status updates
-  fill(0);
-  textSize(12);
-  //text("dinoY is" + dinoY, 150, 25);
-  //text("dinoS is" + dinoS, 150, 50);
-  //text("dinoA is" + dinoA, 150, 75);
-  //text("distance is" + distance, 150, 100);
+
 
   //determine whether there is a hit
   //        dino - cactus
@@ -59,11 +53,11 @@ void draw() {
 }
 
 // respond to keypress 
-//void keyPressed() {
+void keyPressed() {
 
-//only jump when on the ground
-//if (dinoY>=170) {
-//Jump
-// dinoA = -0.5;
-//}
-//} 
+  //to make jump happen
+  if (d1.getY() == 170) {
+    d1.setA(-.35);
+  }
+
+} 

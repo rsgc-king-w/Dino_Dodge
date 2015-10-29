@@ -20,7 +20,9 @@ class Dino {
     dinoA = dinoA + gravity; 
     dinoS = dinoS + dinoA; // change speed based on acceleration
     dinoY = dinoY + dinoS; // change location based on speed
-    
+    dinoS= dinoS + dinoA; // changes speed based on acceleraton
+    dinoY= dinoY + dinoS; // changes location based on speed
+
     // draw the dino
     ellipse(50, dinoY, 50, 50);
 
@@ -30,5 +32,22 @@ class Dino {
       dinoA= 0;
       dinoY= 170;
     }
+
+    //status updates
+    fill(0);
+    textSize(12);
+    text("dinoY is" + dinoY, 150, 25);
+    text("dinoS is" + dinoS, 150, 50);
+    text("dinoA is" + dinoA, 150, 75);
+    text("distance is" + distance, 150, 100);
+  }
+
+  void setA(float newA_) {
+    dinoA = newA_;
+  }
+
+  // Purpose: an accessor method; lets us find out where the dino is (vertically)
+  float getY() {
+    return dinoY;
   }
 }
